@@ -264,6 +264,7 @@
 		"button": {
 			"context_menu": {
 				"copy": "コピー",
+				"view": "表示",
 				"note": "備考",
 				"paste_as_plain_text": "プレーンテキストとして貼り付け",
 				"paste_ocr_text": "OCRテキストペースト",
@@ -279,6 +280,15 @@
 				"show_in_file_explorer": "ファイルエクスプローラで表示",
 				"delete": "削除"
 			}
+		},
+		"view_modal": {
+			"title": "表示と編集",
+			"placeholder": "ここで内容を編集...",
+			"success": "プレーンテキストとしてクリップボードへ更新しました",
+			"unsupported": "この種類は編集できません",
+			"notice": "HTML と RTF の内容はプレーンテキストとして保存されます",
+			"confirm": "確認",
+			"cancel": "キャンセル"
 		},
 		"label": {
 			"tab": {

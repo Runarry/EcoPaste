@@ -264,6 +264,7 @@
 		"button": {
 			"context_menu": {
 				"copy": "复制",
+				"view": "查看",
 				"note": "备注",
 				"paste_as_plain_text": "粘贴为纯文本",
 				"paste_ocr_text": "粘贴OCR文本",
@@ -279,6 +280,15 @@
 				"show_in_file_explorer": "在文件资源管理器中显示",
 				"delete": "删除"
 			}
+		},
+		"view_modal": {
+			"title": "查看和编辑",
+			"placeholder": "在此编辑内容...",
+			"success": "已以纯文本写入剪贴板",
+			"unsupported": "该类型暂不支持编辑",
+			"notice": "HTML/RTF内容将以纯文本保存",
+			"confirm": "确定",
+			"cancel": "取消"
 		},
 		"label": {
 			"tab": {

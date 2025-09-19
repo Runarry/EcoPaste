@@ -5,11 +5,15 @@ import { FloatButton, Modal } from "antd";
 import { findIndex } from "lodash-es";
 import Item from "./components/Item";
 import NoteModal, { type NoteModalRef } from "./components/NoteModal";
+import ViewEditModal, {
+	type ViewEditModalRef,
+} from "./components/ViewEditModal";
 
 const List = () => {
 	const { state, getList } = useContext(MainContext);
 	const outerRef = useRef<HTMLDivElement>(null);
 	const noteModelRef = useRef<NoteModalRef>(null);
+	const viewEditModalRef = useRef<ViewEditModalRef>(null);
 	const [deleteModal, contextHolder] = Modal.useModal();
 
 	const rowVirtualizer = useVirtualizer({
@@ -124,6 +128,7 @@ const List = () => {
 								data={{ ...data, value }}
 								deleteModal={deleteModal}
 								openNoteModel={() => noteModelRef.current?.open()}
+								openViewModal={() => viewEditModalRef.current?.open()}
 								style={{ height: size, transform: `translateY(${start}px)` }}
 							/>
 						);
@@ -138,6 +143,7 @@ const List = () => {
 			/>
 
 			<NoteModal ref={noteModelRef} />
+			<ViewEditModal ref={viewEditModalRef} />
 
 			{contextHolder}
 		</>

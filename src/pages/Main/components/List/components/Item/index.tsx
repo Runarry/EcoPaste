@@ -24,6 +24,7 @@ interface ItemProps extends Partial<FlexProps> {
 	data: HistoryTablePayload;
 	deleteModal: HookAPI;
 	openNoteModel: () => void;
+	openViewModal: () => void;
 }
 
 interface ContextMenuItem extends MenuItemOptions {
@@ -31,8 +32,17 @@ interface ContextMenuItem extends MenuItemOptions {
 }
 
 const Item: FC<ItemProps> = (props) => {
-	const { index, data, className, deleteModal, openNoteModel, ...rest } = props;
+	const {
+		index,
+		data,
+		className,
+		deleteModal,
+		openNoteModel,
+		openViewModal,
+		...rest
+	} = props;
 	const { id, type, value, search, group, favorite, note, subtype } = data;
+	const isEditableType = type === "text" || type === "html" || type === "rtf";
 	const { state } = useContext(MainContext);
 	const { t } = useTranslation();
 	const { env } = useSnapshot(globalStore);
@@ -191,6 +201,11 @@ const Item: FC<ItemProps> = (props) => {
 			{
 				text: t("clipboard.button.context_menu.copy"),
 				action: copy,
+			},
+			{
+				text: t("clipboard.button.context_menu.view"),
+				hide: !isEditableType,
+				action: openViewModal,
 			},
 			{
 				text: t("clipboard.button.context_menu.note"),
