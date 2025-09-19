@@ -23,3 +23,10 @@ auto-imports.d.ts
 *.njsproj
 *.sln
 *.sw?
+
+
+# ignore ai files
+.claude/
+.serena/
+CLAUDE.md
+.mcp.json
